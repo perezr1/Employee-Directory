@@ -8,7 +8,7 @@ function App() {
     <Router>
       <div className="App">
         <Wrapper>
-        <Route path="/search" component={index} />
+        <Route path="/" component={index} />
         </Wrapper>
       </div>
     </Router>
