@@ -1,11 +1,17 @@
-import React from 'react';
-import Main from './components/Main';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import index from "./components/Pages/Main";
+import Wrapper from "./components/Wrapper";
 
 function App() {
-return(
-    <div className="App">
-      <Main />
-    </div>
+  return (
+    <Router>
+      <div className="App">
+        <Wrapper>
+          <Route exact path="/" component={index} />
+        </Wrapper>
+      </div>
+    </Router>
   );
 }
 
