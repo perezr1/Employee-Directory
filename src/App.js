@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import index from "./components/Pages/Main";
+import index from "./pages/index";
 import Wrapper from "./components/Wrapper";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <Router>
       <div className="App">
         <Wrapper>
-          <Route exact path="/" component={index} />
+        <Route path="/search" component={index} />
         </Wrapper>
       </div>
     </Router>

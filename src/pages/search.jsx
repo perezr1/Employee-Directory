@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import "./Main.css";
+import "./search.css";
 
-class Main extends Component {
-
+class search extends Component {
   render() {
     return (
       <div className="wrapper">
@@ -11,8 +10,8 @@ class Main extends Component {
             Employee Directory
           </h1>
           <p className="text-center text-white">
-            Click on carrots to filter by headins or choose the search boxto
-            narrow your res.
+            Click on carrots to filter by headins or choose the search box to
+            narrow your result.
           </p>
         </div>
       </div>
@@ -20,4 +19,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default search;
