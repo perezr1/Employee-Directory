@@ -3,7 +3,7 @@ import DataTable from "./SearchTable";
 import Nav from "./Nav";
 import API from "../utils/API";
 import "../styles/DataArea.css";
-import DataAreaContext from "../utils/DataAreaContext";
+import SearchContext from "../utils/SearchContext";
 
 const DataArea = () => {
   const [developerState, setDeveloperState] = useState({
@@ -103,14 +103,14 @@ const DataArea = () => {
   }, []);
 
   return (
-    <DataAreaContext.Provider
+    <SearchContext.Provider
       value={{ developerState, handleSearchChange, handleSort }}
     >
       <Nav />
       <div className="data-area">
         {developerState.filteredUsers.length > 0 ? <DataTable /> : <div></div>}
       </div>
-    </DataAreaContext.Provider>
+    </SearchContext.Provider>
   );
 };
 

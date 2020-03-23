@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import "../styles/Search.css";
-import DataAreaContext from "../utils/DataAreaContext";
+import SearchContext from "../utils/SearchContext";
 
 const Search = () => {
-  const context = useContext(DataAreaContext);
+  const context = useContext(SearchContext);
 
   // This makes the search bar and links it to the data area context API
   return (

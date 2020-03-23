@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import DataBody from "./Body";
 import "../styles/SearchTable.css";
-import DataAreaContext from "../utils/DataAreaContext";
+import SearchContext from "../utils/SearchContext";
 
 const SearchTable = () => {
-  const context = useContext(DataAreaContext);
+  const context = useContext(SearchContext);
 
   return (
     <div className="mt-5">

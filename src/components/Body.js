@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 // import "../styles/Body.css";
-import DataAreaContext from "../utils/DataAreaContext";
+import SearchContext from "../utils/SearchContext";
 
 const Body = () => {
-  const context = useContext(DataAreaContext);
+  const context = useContext(SearchContext);
 
   // Formating the date to be albe to search by birthday
   function formatDate(date) {
