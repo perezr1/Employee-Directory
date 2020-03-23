@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import DataTable from "./SearchTable";
+import SearchTable from "./SearchTable";
 import Nav from "./Nav";
 import API from "../utils/API";
-import "../styles/DataArea.css";
 import SearchContext from "../utils/SearchContext";
+import "../styles/ResultsArea.css";
 
-const DataArea = () => {
+const ResultsArea = () => {
   const [developerState, setDeveloperState] = useState({
     users: [],
     order: "descend",
@@ -40,9 +40,9 @@ const DataArea = () => {
           return -1;
         }
         // numerically
-        else if (heading === "Name") {
+        else if (heading === "name") {
           return a[heading].first.localeCompare(b[heading].first);
-        } else if (heading === "DOB") {
+        } else if (heading === "dob") {
           return a[heading].age - b[heading].age;
         } else {
           return a[heading].localeCompare(b[heading]);
@@ -55,9 +55,9 @@ const DataArea = () => {
           return -1;
         }
         // numerically
-        else if (heading === "Name") {
+        else if (heading === "name") {
           return b[heading].first.localeCompare(a[heading].first);
-        } else if (heading === "DOB") {
+        } else if (heading === "dob") {
           return b[heading].age - a[heading].age;
         } else {
           return b[heading].localeCompare(a[heading]);
@@ -79,6 +79,7 @@ const DataArea = () => {
 
   const handleSearchChange = event => {
     const filter = event.target.value;
+    // eslint-disable-next-line array-callback-return
     const filteredList = developerState.users.filter(item => {
       let values =
         item.name.first.toLowerCase() + " " + item.name.last.toLowerCase();
@@ -100,7 +101,8 @@ const DataArea = () => {
         filteredUsers: results.data.results
       });
     });
-  }, []);
+  },[]);
+  //  ^ it affects which letter search focus on // put a number and have fun
 
   return (
     <SearchContext.Provider
@@ -108,10 +110,10 @@ const DataArea = () => {
     >
       <Nav />
       <div className="data-area">
-        {developerState.filteredUsers.length > 0 ? <DataTable /> : <div></div>}
+        {developerState.filteredUsers.length ? <SearchTable /> : <div></div>}
       </div>
     </SearchContext.Provider>
   );
 };
 
-export default DataArea;
+export default ResultsArea;

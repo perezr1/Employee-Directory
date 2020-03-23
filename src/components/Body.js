@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-// import "../styles/Body.css";
 import SearchContext from "../utils/SearchContext";
 
 const Body = () => {

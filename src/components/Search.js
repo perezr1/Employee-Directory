@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import "../styles/Search.css";
 import SearchContext from "../utils/SearchContext";
+import "../styles/Search.css";
 
 const Search = () => {
   const context = useContext(SearchContext);

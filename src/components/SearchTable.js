@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
-import DataBody from "./Body";
-import "../styles/SearchTable.css";
+import Body from "./Body";
 import SearchContext from "../utils/SearchContext";
+import "../styles/SearchTable.css";
 
 const SearchTable = () => {
   const context = useContext(SearchContext);
 
   return (
-    <div className="mt-5">
+    <div className=" SearchTable mt-5">
       <table
         id="table"
         className="table table-striped table-hover table-condensed"
@@ -17,7 +17,7 @@ const SearchTable = () => {
             {context.developerState.headings.map(({ name, width }) => {
               return (
                 <th
-                  className="col"
+                  className="SearchTable col"
                   key={name}
                   style={{ width }}
                   onClick={() => {
@@ -27,12 +27,12 @@ const SearchTable = () => {
                   {name}
                   <span className="pointer"></span>
                 </th>
-              );
+              );    
             })}
           </tr>
         </thead>
 
-        <DataBody />
+        <Body />
       </table>
     </div>
   );

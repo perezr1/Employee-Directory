@@ -1,8 +1,8 @@
 import React from "react";
-import DataArea from "./DataArea";
+import ResultsArea from "./ResultsArea";
 
 function Main() {
-  return <DataArea />;
+  return <ResultsArea />;
 }
 
 export default Main;
